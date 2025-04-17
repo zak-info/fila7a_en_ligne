@@ -1,7 +1,8 @@
 import React from 'react'
-import CompanyCard from './CompanyCard'
+import CompanyCard from '../Comp/CompanyCard'
 
-const Companies = () => {
+
+const Vitirians = ({vitirians}) => {
   const comps = [
     { id: '1', name: "Comp 1",descriptions:'healthy products, advanced technology, and sustainable farming solutions. Farmers, consumers, and businesses appreciate our efficiency, innovation, and commitment to quality.', address: "algerie - blida", phone: '+213 540 123 234',image:"/images/bg-2.png" },
     { id: '2', name: "Comp 2",descriptions:'healthy products, advanced technology, and sustainable farming solutions. Farmers, consumers, and businesses appreciate our efficiency, innovation, and commitment to quality.', address: "algerie - bouira", phone: '+213 550 345 345',image:"/images/bg-6.png" },
@@ -10,10 +11,10 @@ const Companies = () => {
   ]
   return (
     <div className='w-full '>
-      <h1 className=' font-bold text-xl'>Products Page</h1>
+      <h1 className=' font-bold text-xl'>Vitirianians Page</h1>
       <div className='w-full mt-16 flex flex-col gap-4'>
         {
-          comps?.map((comp, index) => (
+          vitirians?.map((comp, index) => (
             <CompanyCard key={index} comp={comp} />
           ))
         }
@@ -23,4 +24,4 @@ const Companies = () => {
   )
 }
 
-export default Companies
+export default Vitirians

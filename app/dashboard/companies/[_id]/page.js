@@ -1,4 +1,4 @@
-import CompPage from '@components/dashboard/Comp/CompPage'
+import CompPage from '@components/dashboard/User/Comp/CompPage'
 import React from 'react'
 
 const page = ({params}) => {

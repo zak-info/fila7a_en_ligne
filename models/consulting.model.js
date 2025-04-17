@@ -2,18 +2,15 @@ import mongoose, { Schema } from "mongoose";
 
 const schama = new Schema(
     {
-        // cId: mongoose.Schema.Types.ObjectId,
         userId: {
             type: mongoose.Schema.Types.ObjectId,
-            // required: true,
+            ref: "User", 
         },
         title: {
             type: String,
-            // required: true,
         },
         description: {
             type: String,
-            // unique: true,
         },
         status: {
             type: String,

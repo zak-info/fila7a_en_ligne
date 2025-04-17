@@ -53,7 +53,7 @@ const Section6 = () => {
       <div className="w-2/5">
         <Image src={"/images/bg-8.png"} width={500} height={1000} className="w-[40vw] h-[80vh]" />
       </div>
-      <div className="lg:w-2/5">
+      <div className="w-full lg:w-2/5">
         <span className="text-[#24420E] text-lg font-semibold">Freaquently Asked Questions</span>
         <h1 className="text-4xl font-semibold  mt-4 ">Most Frequently Asked Questions About Filaha Online</h1>
         <p className=" font-light mt-8">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusant </p>
@@ -73,16 +73,16 @@ const Section6 = () => {
                 </AccordionItem>
               </Accordion> */}
           <Accordion motionProps={motionProps} className='w-full flex flex-col items-center  ' variant="splitted" >
-            <AccordionItem key="1" className='   bg-gradient-to-r rounded lg:w-[30vw] from-[#24420E] to-[#24420E]   text-white' aria-label="Accordion 1" title={<h1 className='text-white text-md font-semibold'> How can I track crop growth using modern technologies?</h1>}>
+            <AccordionItem key="1" className='w-full    bg-gradient-to-r rounded lg:w-[30vw] from-[#24420E] to-[#24420E]   text-white' aria-label="Accordion 1" title={<h1 className='text-white text-md font-semibold'> How can I track crop growth using modern technologies?</h1>}>
               How can I track crop growth using modern technologies?
             </AccordionItem>
-            <AccordionItem key="4" className='bg-gradient-to-r rounded lg:w-[30vw]  from-[#24420E] to-[#24420E]  text-white' aria-label="Accordion 3" title={<h1 className='text-white text-md font-semibold'>Does the platform provide sensors to monitor animal health?</h1>}>
+            <AccordionItem key="4" className='w-full  bg-gradient-to-r rounded lg:w-[30vw]  from-[#24420E] to-[#24420E]  text-white' aria-label="Accordion 3" title={<h1 className='text-white text-md font-semibold'>Does the platform provide sensors to monitor animal health?</h1>}>
               Does the platform provide sensors to monitor animal health?
             </AccordionItem>
-            <AccordionItem key="5" className='bg-gradient-to-r rounded lg:w-[30vw]  from-[#24420E] to-[#24420E]  text-white' aria-label="Accordion 3" title={<h1 className='text-white text-md font-semibold'>Can I send photos or videos to help with the diagnosis?</h1>}>
+            <AccordionItem key="5" className='w-full  bg-gradient-to-r rounded lg:w-[30vw]  from-[#24420E] to-[#24420E]  text-white' aria-label="Accordion 3" title={<h1 className='text-white text-md font-semibold'>Can I send photos or videos to help with the diagnosis?</h1>}>
               Can I send photos or videos to help with the diagnosis?
             </AccordionItem>
-            <AccordionItem key="6" className='bg-gradient-to-r rounded lg:w-[30vw]  from-[#24420E] to-[#24420E]  text-white' aria-label="Accordion 3" title={<h1 className='text-white text-md font-semibold'>How can I increase my productivity using modern techniques?</h1>}>
+            <AccordionItem key="6" className='w-full  bg-gradient-to-r rounded lg:w-[30vw]  from-[#24420E] to-[#24420E]  text-white' aria-label="Accordion 3" title={<h1 className='text-white text-md font-semibold'>How can I increase my productivity using modern techniques?</h1>}>
               How can I increase my productivity using modern techniques?
             </AccordionItem>
           </Accordion>

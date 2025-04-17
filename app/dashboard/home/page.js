@@ -1,4 +1,4 @@
-import Home from '@components/dashboard/Home/Home'
+import Home from '@components/dashboard/User/Home/Home'
 import { getServerSession } from "next-auth";
 import { authOptions } from "../../api/auth/[...nextauth]/route";
 

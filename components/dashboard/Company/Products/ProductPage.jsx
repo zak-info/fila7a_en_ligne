@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ProductPage = ({_id}) => {
+const ProductPage = ({_id,product}) => {
 
     const prods = [
         { _id: '1', name: "my product 1", description: "product description", address: "algerie - blida", phone: '+213 540 123 234' ,price: "25.00", image: "/images/bg-2.png",},
@@ -16,8 +16,8 @@ const ProductPage = ({_id}) => {
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 mx-auto max-md:px-2 ">
                     <div class="img">
                         <div class="img-box h-full max-lg:mx-auto ">
-                            <img src={currentProduct?.image} alt="Yellow Tropical Printed Shirt image"
-                                class="max-lg:mx-auto rounded-lg lg:ml-auto h-full object-cover" />
+                            <img src={product?.imageUrl} alt="Yellow Tropical Printed Shirt image"
+                                class="max-lg:mx-auto rounded-lg lg:ml-auto h-[80vh] object-cover" />
                         </div>
                     </div>
                     <div
@@ -25,11 +25,10 @@ const ProductPage = ({_id}) => {
                         <div class="data w-full max-w-xl">
                             <p class="text-lg font-medium leading-8 text-primary-1 mb-4">agri&nbsp; /&nbsp; products
                             </p>
-                            <h2 class="font-manrope font-bold text-3xl leading-10 text-gray-900 mb-2 capitalize">{currentProduct?.name}</h2>
+                            <h2 class="font-manrope font-bold text-3xl leading-10 text-gray-900 mb-2 capitalize">{product?.name}</h2>
                             <div class="flex flex-col sm:flex-row sm:items-center mb-6">
-                                <h6
-                                    class="font-manrope font-semibold text-2xl leading-9 text-gray-900 pr-5 sm:border-r border-gray-200 mr-5">
-                                    220 DZD</h6>
+                                <h6 class="font-manrope font-semibold text-2xl leading-9 text-gray-900 pr-5 sm:border-r border-gray-200 mr-5"> {product?.price} DZD</h6>
+                                <h6 class="font-manrope font-semibold text-2xl leading-9 text-gray-900 pr-5 sm:border-r border-gray-200 mr-5"> {product?.type || "--"} </h6>
                                 <div class="flex items-center gap-2">
                                     <div class="flex items-center gap-1">
                                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
@@ -99,14 +98,12 @@ const ProductPage = ({_id}) => {
                                         </svg>
 
                                     </div>
-                                    <span class="pl-2 font-normal leading-7 text-gray-500 text-sm ">1624 review</span>
+                                    <span class="pl-2 font-normal leading-7 text-gray-500 text-sm ">0 review</span>
                                 </div>
 
                             </div>
                             <p class="text-gray-500 text-base font-normal mb-5">
-                                Introducing our vibrant Basic Yellow Tropical Printed Shirt - a celebration of style and
-                                sunshine! Embrace the essence of summer wherever you go with this eye-catching piece that
-                                effortlessly blends comfort and tropical flair. <a href="#"
+                                {product?.description} <a href="#"
                                     class="text-primary-1">More....</a>
                             </p>
                             <ul class="grid gap-y-4 mb-8">
@@ -118,7 +115,7 @@ const ProductPage = ({_id}) => {
                                             d="M7.66669 12.629L10.4289 15.3913C10.8734 15.8357 11.0956 16.0579 11.3718 16.0579C11.6479 16.0579 11.8701 15.8357 12.3146 15.3913L18.334 9.37183"
                                             stroke="white" stroke-width="1.6" stroke-linecap="round" />
                                     </svg>
-                                    <span class="font-normal text-base text-gray-900 ">spec 1</span>
+                                    <span class="font-normal text-base text-gray-900 ">{product?.name}</span>
                                 </li>
                                 <li class="flex items-center gap-3">
                                     <svg width="26" height="26" viewBox="0 0 26 26" fill="none"
@@ -128,7 +125,7 @@ const ProductPage = ({_id}) => {
                                             d="M7.66669 12.629L10.4289 15.3913C10.8734 15.8357 11.0956 16.0579 11.3718 16.0579C11.6479 16.0579 11.8701 15.8357 12.3146 15.3913L18.334 9.37183"
                                             stroke="white" stroke-width="1.6" stroke-linecap="round" />
                                     </svg>
-                                    <span class="font-normal text-base text-gray-900 ">spec 2</span>
+                                    {/* <span class="font-normal text-base text-gray-900 ">spec 2</span> */}
                                 </li>
                                 <li class="flex items-center gap-3">
                                     <svg width="26" height="26" viewBox="0 0 26 26" fill="none"
@@ -138,7 +135,7 @@ const ProductPage = ({_id}) => {
                                             d="M7.66669 12.629L10.4289 15.3913C10.8734 15.8357 11.0956 16.0579 11.3718 16.0579C11.6479 16.0579 11.8701 15.8357 12.3146 15.3913L18.334 9.37183"
                                             stroke="white" stroke-width="1.6" stroke-linecap="round" />
                                     </svg>
-                                    <span class="font-normal text-base text-gray-900 ">spec 3
+                                    <span class="font-normal text-base text-gray-900 ">{product?.price}
                                         40%</span>
                                 </li>
                                 <li class="flex items-center gap-3">
@@ -149,11 +146,11 @@ const ProductPage = ({_id}) => {
                                             d="M7.66669 12.629L10.4289 15.3913C10.8734 15.8357 11.0956 16.0579 11.3718 16.0579C11.6479 16.0579 11.8701 15.8357 12.3146 15.3913L18.334 9.37183"
                                             stroke="white" stroke-width="1.6" stroke-linecap="round" />
                                     </svg>
-                                    <span class="font-normal text-base text-gray-900 ">spec 4</span>
+                                    {/* <span class="font-normal text-base text-gray-900 ">spec 4</span> */}
                                 </li>
                             </ul>
                         </div>
-                        <a href="#" className='w-72 rounded-lg text-center mt-16 py-4 text-2xl font-bold bg-primary-1 text-white'>Order Now</a>
+                        <a href={"/dashboard/company/"+product?.idCompany} className='w-72 rounded-lg text-center mt-16 py-4 text-2xl font-bold bg-primary-1 text-white'>Order Now</a>
 
                     </div>
                 </div>

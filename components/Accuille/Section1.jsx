@@ -2,10 +2,10 @@ import React from 'react'
 
 const Section1 = () => {
     return (
-        <div className="w-full pt-40 lg:px-40 flex flex-col items-start h-screen bg-[url('/bg-1.png')] bg-cover bg-center bg-no-repeat">
+        <div className="w-full pt-40 lg:px-40 flex flex-col items-start min-h-screen bg-[url('/bg-1.png')] bg-cover bg-center bg-no-repeat">
             <h1 className="lg:w-3/5 text-5xl font-bold text-black text-start">Connecting expertise with the field to achieve sustainable <span className="text-primary-1">growth</span> </h1>
             <p className="lg:w-2/5 text-sm mt-6 font-light">Filaha Online connects agricultural and veterinary experts with farmers and breeders through an online platform for efficient communication and consultations.</p>
-            <div className="w-full mt-48 flex justify-center gap-6">
+            <div className="w-full mt-48 flex flex-col lg:flex-cow justify-center gap-6">
                 <div className="lg:w-[300px] rounded-xl overflow-clip h-[420px] p-4 bg-[url('/images/bg-2.png')] bg-cover bg-center bg-no-repeat ">
                     <div className="w-full h-full px-6 gap-6 rounded-xl bg-white flex flex-col items-center justify-center">
                         <svg width="61" height="61" viewBox="0 0 61 61" fill="none" xmlns="http://www.w3.org/2000/svg">

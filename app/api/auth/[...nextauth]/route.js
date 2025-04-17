@@ -11,16 +11,16 @@ export const authOptions = {
       name: "credentials",
       credentials: {
         password: { label: "Password", type: "password" },
-        username: { label: "Username", type: "text", placeholder: "John Smith" },
+        email: { label: "Email", type: "email", placeholder: "email" },
       },
 
       async authorize(credentials) {
-        if (!credentials.username || !credentials.password) {
+        if (!credentials.email || !credentials.password) {
           throw new Error('Please enter an username and password')
         }
-        console.log(credentials.username);
+        console.log(credentials.email);
         await connect();
-        const user = await User.findOne({ username: credentials.username });
+        const user = await User.findOne({ email: credentials.email });
         console.log(user);
         if (!user) {
           throw new Error('No user found')
@@ -60,7 +60,7 @@ export const authOptions = {
 
       }
       if (user) {
-        return {_id:user._id,username:user.username,field:user?.field,type:user?.type }
+        return {_id:user._id,email:user.email,fullname:user.fullname,phone:user?.phone,type:user?.type,createdAt:user?.createdAt }
       }
       return token;
 
@@ -90,3 +90,6 @@ export const authOptions = {
 const handler = NextAuth(authOptions);
 
 export { handler as GET, handler as POST };
+
+
+

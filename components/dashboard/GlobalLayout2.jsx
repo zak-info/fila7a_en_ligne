@@ -7,15 +7,23 @@ import SideBarItems from '@components/dashboard/Header/SideBarItems';
 import { Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, Button } from "@nextui-org/react";
 import { signOut } from 'next-auth/react'
 import { GlobalContext } from '@context/GlobalContext'
+import { useRouter } from '@node_modules/next/navigation';
 
 
 
 const GlobalLayout2 = ({ children }) => {
+  const router = useRouter()
   const { data: session, update } = useSession()
   const { user, setUser } = useContext(GlobalContext);
   useEffect(() => {
     setUser(session?.user);
   }, [session])
+
+
+  const logout = ()=>{
+    signOut()
+    router.push("/")
+  }
 
   // const { user } = useContext(GlobalContext);
 
@@ -32,7 +40,7 @@ const GlobalLayout2 = ({ children }) => {
   return (
     <div className='relative w-full flex  '>
       <div className='w-1/5 bg-[#24420E] h-full fixed'>
-        <SideBarItems user={""} />
+        <SideBarItems user={user} />
       </div>
       <div className='w-full flex justify-end'>
         <div className='w-4/5 p-4'>
@@ -41,11 +49,11 @@ const GlobalLayout2 = ({ children }) => {
               <DropdownTrigger>
                 <div className="flex ms-2 me-2 md:me-8 hover:cursor-pointer">
                   <div class="relative ">
-                    <div class="w-10 h-10 bg-[#436850]  border border-white rounded-full flex justify-center items-center text-white" alt="">{getFirstLetters(user?.username)}</div>
+                    <div class="w-10 h-10 bg-[#436850]  border border-white rounded-full flex justify-center items-center text-white" alt="">{getFirstLetters(user?.fullname)}</div>
                     <span class="bottom-0 left-7 absolute border border-white  w-3 h-3 bg-[#2afa6a]  rounded-full"></span>
                   </div>
                   <div class="font-medium ms-4">
-                    <div>{user?.username}</div>
+                    <div>{user?.fullname}</div>
                     <div class="text-sm text-gray-500">{user?.type}</div>
                   </div>
                 </div>
@@ -58,13 +66,13 @@ const GlobalLayout2 = ({ children }) => {
                   </a>
                 </DropdownItem>
                 <DropdownItem key="new">
-                  <a href={`/dashboard/employees/profile?_id=${user?._id}`} className="flex items-center  hover:bg-gray-100 p-2 rounded-xl" dir="ltr">
+                  <a href={`/dashboard/profile?_id=${user?._id}`} className="flex items-center  hover:bg-gray-100 p-2 rounded-xl" dir="ltr">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
                     <span className="ms-2  text-lg">Profile</span>
                   </a>
                 </DropdownItem>
                 <DropdownItem key="new">
-                  <div className="flex items-center  hover:bg-gray-100 p-2 rounded-xl" dir="ltr" onClick={signOut}>
+                  <div className="flex items-center  hover:bg-gray-100 p-2 rounded-xl" dir="ltr" onClick={logout}>
                     <svg className="w-6 h-6 text-red-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" ><path strokeLinecap="round" strokeLinejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9" /></svg>
                     <span className="ms-2 text-lg text-red-500">Logout</span>
                   </div>

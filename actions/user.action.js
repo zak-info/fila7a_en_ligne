@@ -1,6 +1,6 @@
 "use server"
 
-import {  createMongoUser, getMongoUser, getMongoUsers, updateMongoUserDataKey, updateMongoUsers } from "@/controlers/user.controler";
+import { createMongoUser, getMongoUser, getMongoUsers, updateMongoUserDataKey, updateMongoUsers } from "@/controlers/user.controler";
 import { revalidatePath } from "next/cache";
 import User from "@models/user.model";
 
@@ -8,7 +8,6 @@ export async function createUser(data) {
     try {
         const result = await User.create(data)
         return { success: true, status: 201 };
-
     } catch (error) {
         console.log(error);
         return { success: false, status: 404, error }
@@ -26,6 +25,17 @@ export async function UpdateUserDataKey(clerkId, data, path) {
         } else {
             return { success: false, status: 404, error: clerkUserResult?.error, msg: clerkUserResult?.msg };
         }
+    } catch (error) {
+        console.log(error);
+        return { success: false, status: 404, error }
+    }
+}
+
+export async function UpdateUser(condition, data) {
+    try {
+        const result = await User.updateOne(condition, { $set: data })
+        revalidatePath("/dashboard/profile", "page")
+
     } catch (error) {
         console.log(error);
         return { success: false, status: 404, error }

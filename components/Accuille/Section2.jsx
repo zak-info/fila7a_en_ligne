@@ -6,7 +6,7 @@ const Section2 = () => {
             <span className="text-[#24420E] text-lg font-semibold">What Are Our Specialties?</span>
             <h1 className="text-3xl font-semibold w-1/2 mt-4 ">We Provide the Best Agricultural Services</h1>
             <p className="text-sm font-light mt-8">Advanced farming techniques enhance efficiency, yield, and environmental sustainability.</p>
-            <div className=" relative w-full pt-40 lg:px-40 flex flex-col items-start h-[190vh] bg-[url('/images/bg-5.png')] bg-cover bg-center bg-no-repeat">
+            <div className=" relative w-full pt-40 lg:px-40 flex flex-col items-start h-auto lg:h-[190vh] bg-[url('/images/bg-5.png')] bg-cover bg-center bg-no-repeat">
                 <div className="p-8 text-white bg-gradient-to-br rounded-xl from-[#1C3F02] to-[#4DB600] " >
                     <h1 className=" text-2xl font-semibold ">Farmers' Services</h1>
                     <div className="flex items-center gap-2 mt-6 text-sm font-bold">
@@ -48,7 +48,7 @@ const Section2 = () => {
                         </svg>
                     </a>
                 </div>
-                <div className="absolute bottom-0 right-0 m-40 p-8 text-white bg-gradient-to-br rounded-xl from-[#1C3F02] to-[#4DB600] " >
+                <div className="lg:absolute lg:bottom-0 lg:right-0 m-40 p-8 text-white bg-gradient-to-br rounded-xl from-[#1C3F02] to-[#4DB600] " >
                     <h1 className=" text-2xl font-semibold ">Veterinarians' Services</h1>
                     <div className="flex items-center gap-2 mt-6 text-sm font-bold">
                         <svg width="25" height="25" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">

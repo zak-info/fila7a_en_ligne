@@ -37,7 +37,7 @@ const Register = ({ type }) => {
                 <Image src={"/logo.png"} width={400} height={400} className="z-10 w-32 h-20 md:w-[15vh] md:h-[10vh] transition ease-in-out duration-300" />
             </div>
             <form onSubmit={handleRegister} className='w-5/6 md:w-4/12 bg-[#f9fbfc] mt-8 py-8 border  rounded-3xl px-2 flex flex-col items-center'>
-                <h1 className="text-4xl font-light text-[#436850] ">Create an Account</h1>
+                <h1 className="text-2xl lg:text-4xl font-light text-[#436850] text-center">Create an Account</h1>
                 <div className="w-5/6 md:w-4/5 mt-16">
                     <label htmlFor="fullname" className="">fullname</label>
                     <input id="fullname" type="text" name='fullname' onChange={(e) => { setCredentials({ ...credentials, fullname: e.target.value }) }} className='w-full mt-2 px-2 py-2 outline-none  border border-gray-300 hover:border-[#52795f]  rounded-xl transition ease-in-out duration-150' placeholder='fullname ' required />

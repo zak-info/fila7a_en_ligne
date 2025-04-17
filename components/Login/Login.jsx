@@ -19,7 +19,7 @@ const Login = () => {
         setPostloader(true);
         await signIn('credentials',
             {
-                username: e.target.username.value, password: e.target.password.value, redirect: false
+                email: e.target.email.value, password: e.target.password.value, redirect: false
                 // ,callbackUrl:"/dashboard/home"
             })
             .then((callback) => {
@@ -44,8 +44,8 @@ const Login = () => {
             <form onSubmit={handleLogin} className='w-5/6 md:w-4/12 bg-[#f9fbfc] mt-8 py-8 border  rounded-3xl px-2 flex flex-col items-center'>
                 <h1 className="text-6xl font-light text-[#436850] ">Login</h1>
                 <div className="w-5/6 md:w-4/5 mt-32">
-                    <label htmlFor="username" className="">username</label>
-                    <input id="email" type="text" name='username' className='w-full mt-2 px-2 py-2 outline-none  border border-gray-300 hover:border-[#52795f]  rounded-xl transition ease-in-out duration-150' placeholder='username ' required />
+                    <label htmlFor="email" className="">email</label>
+                    <input id="email" type="email" name='email' className='w-full mt-2 px-2 py-2 outline-none  border border-gray-300 hover:border-[#52795f]  rounded-xl transition ease-in-out duration-150' placeholder='email ' required />
                 </div>
                 <div className="w-5/6 md:w-4/5 mt-4 ">
                     <label htmlFor="password" className="">password</label>

@@ -15,20 +15,41 @@ const SideBarItems = ({ user }) => {
         signOut();
         router.push("/login");
         // router.refresh();
-
     }
+
+    console.log(user);
 
     return (
         <div className="w-full h-full flex flex-col items-center ">
             <GoToAccLogo />
             {/* <div className='h-[1px] w-3/4 bg-gradient-to-tr from-[#F8F9FA] via-gray-200 to-[#F8F9FA]'></div> */}
-            <div className='w-full p-4 ps-0 mt-6 flex flex-col gap-2'>
+            <div className='w-full lg:p-4 ps-0 lg:ps-0 mt-6 flex flex-col lg:gap-2'>
 
-                <BigSidebarItem href={"/dashboard/home"} path={"home"} span={"Home"} icon={<i class="ri-home-9-fill text-xl text-primary-1"></i>} />
-                <BigSidebarItem href={"/dashboard/products"} path={"products"} span={"Products"} icon={<i class="ri-archive-fill text-xl text-primary-1"></i>} />
-                <BigSidebarItem href={"/dashboard/companies"} path={"companies"} span={"Companies"} icon={<i class="ri-community-fill text-xl text-primary-1"></i>} />
-                <BigSidebarItem href={"/dashboard/vitirians"} path={"vitirians"} span={"Vitirians"} icon={<i class="ri-hand-heart-line text-xl text-primary-1"></i>} />
-                <BigSidebarItem href={"/dashboard/consulting"} path={"consulting"} span={"Consulting"} icon={<i class="ri-shake-hands-fill text-xl text-primary-1"></i>} />
+                {
+                    user?.type == "user" || user?.type == "scientist" ?
+                        <>
+                            <BigSidebarItem href={"/dashboard/home"} path={"home"} span={"Home"} icon={<i class="ri-home-9-fill text-xl text-primary-1"></i>} />
+                            <BigSidebarItem href={"/dashboard/products"} path={"products"} span={"Products"} icon={<i class="ri-archive-fill text-xl text-primary-1"></i>} />
+                            <BigSidebarItem href={"/dashboard/companies"} path={"companies"} span={"Companies"} icon={<i class="ri-community-fill text-xl text-primary-1"></i>} />
+                            <BigSidebarItem href={"/dashboard/veterinarian"} path={"vitirians"} span={"Vitirians"} icon={<i class="ri-hand-heart-line text-xl text-primary-1"></i>} />
+                            <BigSidebarItem href={"/dashboard/consulting"} path={"consulting"} span={"Consulting"} icon={<i class="ri-shake-hands-fill text-xl text-primary-1"></i>} />
+                        </>
+                        : user?.type == "company" ?
+                            <>
+                                <BigSidebarItem href={"/dashboard/company/home"} path={"home"} span={"Home"} icon={<i class="ri-home-9-fill text-xl text-primary-1"></i>} />
+                                <BigSidebarItem href={"/dashboard/company/products"} path={"products"} span={"Products"} icon={<i class="ri-archive-fill text-xl text-primary-1"></i>} />
+
+                            </>
+                            :user?.type == "veterinarian" ?
+                            <>
+                                <BigSidebarItem href={"/dashboard/home"} path={"home"} span={"Home"} icon={<i class="ri-home-9-fill text-xl text-primary-1"></i>} />
+                                <BigSidebarItem href={"/dashboard/veterinarian/consulting"} path={"consulting"} span={"Consulting"} icon={<i class="ri-archive-fill text-xl text-primary-1"></i>} />
+
+                            </>
+                            :
+                            null
+                }
+
                 <div>
                     <span className='text-neutral-400 lg:ms-2 text-[10px] lg:text-xs mt-12'>Managements</span>
                     <BigSidebarItem href={"/dashboard/settings"} path={"settings"} span={"settings"} icon={<i class="ri-tools-fill text-xl text-primary-1"></i>} />
