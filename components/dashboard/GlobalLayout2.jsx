@@ -7,8 +7,9 @@ import SideBarItems from '@components/dashboard/Header/SideBarItems';
 import { Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, Button } from "@nextui-org/react";
 import { signOut } from 'next-auth/react'
 import { GlobalContext } from '@context/GlobalContext'
-import { useRouter } from '@node_modules/next/navigation';
+import { usePathname, useRouter } from '@node_modules/next/navigation';
 import JustText from '@components/just-text/JustText';
+import { useLocale } from 'next-intl';
 
 
 
@@ -21,7 +22,7 @@ const GlobalLayout2 = ({ children }) => {
   }, [session])
 
 
-  const logout = ()=>{
+  const logout = () => {
     signOut()
     router.push("/")
   }
@@ -38,6 +39,25 @@ const GlobalLayout2 = ({ children }) => {
     return firstLetters;
   }
 
+  const pathname = usePathname();
+  const parts = pathname.split("/");
+  const locale = useLocale()
+
+  const changeLang = (locale) => {
+    let updatedPath;
+    if (pathname === "/") {
+      updatedPath = `/${locale}`;
+    } else if (pathname.startsWith("/" + locale)) {
+      // Already on the desired locale
+      updatedPath = pathname;
+    } else {
+      updatedPath = pathname.replace(/^\/[^/]+/, `/${locale}`);
+    }
+
+    console.log("Updated path:", updatedPath);
+    router.push(updatedPath);
+  };
+
   return (
     <div className='relative w-full flex  '>
       <div className='w-1/5 bg-[#24420E] h-full fixed'>
@@ -46,6 +66,37 @@ const GlobalLayout2 = ({ children }) => {
       <div className='w-full flex justify-end'>
         <div className='w-4/5 p-4'>
           <div className='w-full flex items-center justify-end'>
+            <Dropdown >
+              <DropdownTrigger>
+                <div className="flex  items-center gap-3 px-3  h-12  hover:cursor-pointer border-b border-black  cursor-pointer">
+                  <img className="w-6 h-8  " src={`/images/${locale}.svg`} alt="user photo" />
+                  <span className="ms-1 text-xs md:text-sm text-primary-3 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-3 h-3 ms-1"><path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg>
+                  </span>
+                </div>
+
+              </DropdownTrigger>
+              <DropdownMenu aria-label="Static Actions" className='w-full px-2 py-3 bg-white rounded-xl border-none'>
+                <DropdownItem key="new" onPress={() => changeLang("en")} className="hover:bg-gray-100 p-0">
+                  <div className="flex m-0 items-center text-gray-500  hover:bg-gray-100 rounded-lg px-3 py-1">
+                    <img className="w-6 h-4   " src="/images/en.svg" alt="user photo" />
+                    <span className="ms-3 text-sm md:text-lg   flex items-center">ِEnglish</span>
+                  </div>
+                </DropdownItem>
+                <DropdownItem key="new2" onPress={() => changeLang("fr")} className="p-0 mt-2">
+                  <div className="flex  items-center text-gray-500  hover:bg-gray-100 rounded-lg px-3 py-1">
+                    <img className="w-6 h-4  " src="/images/fr.svg" />
+                    <span className="ms-3 text-sm md:text-lg flex items-center">French</span>
+                  </div>
+                </DropdownItem>
+                <DropdownItem key="new3" onPress={() => changeLang("ar")} className="p-0 mt-2">
+                  <div className="flex  items-center text-gray-500  hover:bg-gray-100 rounded-lg px-3 py-1">
+                    <img className="w-6 h-4  " src="/images/ar.svg" />
+                    <span className="ms-3 text-sm md:text-lg flex items-center">عربي</span>
+                  </div>
+                </DropdownItem>
+              </DropdownMenu>
+            </Dropdown>
             <Dropdown >
               <DropdownTrigger>
                 <div className="flex ms-2 me-2 md:me-8 hover:cursor-pointer">
@@ -73,7 +124,7 @@ const GlobalLayout2 = ({ children }) => {
                   </a>
                 </DropdownItem>
                 <DropdownItem key="new">
-                  <div className="flex items-center  hover:bg-gray-100 p-2 rounded-xl"  onClick={logout}>
+                  <div className="flex items-center  hover:bg-gray-100 p-2 rounded-xl" onClick={logout}>
                     <svg className="w-6 h-6 text-red-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" ><path strokeLinecap="round" strokeLinejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9" /></svg>
                     <span className="ms-2 text-lg text-red-500"><JustText text={"logout"} /></span>
                   </div>

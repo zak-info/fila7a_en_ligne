@@ -17,7 +17,7 @@ export default async function Home({params}) {
     <div className="w-screen h-screen  overflow-x-hidden overflow-y-scroll hide-scrollbar">
       <div className="relative w-full">
         <Header />
-        <Section1 />
+        <Section1 locale={params?.locale} />
         <Section2 />
         <Section3 />
         <Sections4 />
