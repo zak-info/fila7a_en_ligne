@@ -11,6 +11,7 @@ import {
   Tooltip,
   Filler,
 } from "chart.js";
+import JustText from "@components/just-text/JustText";
 
 ChartJS.register(
   LineElement,
@@ -79,7 +80,7 @@ function LineChart() {
   return (
     <div>
       <h1 className="font-bold text-3xl text-center mt-10">
-        Total Prdocucts for this month
+      <JustText text={"total_products_this_month"} />
       </h1>
       <div className="w-full h-full  cursor-pointer">
         <Line data={data} options={options}></Line>

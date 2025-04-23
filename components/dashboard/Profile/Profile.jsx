@@ -2,6 +2,7 @@
 
 import { UpdateUser } from '@actions/user.action';
 import CircleTextToggle from '@components/DesignHelpers/CircleTextToggle copy';
+import JustText from '@components/just-text/JustText';
 import { useSession } from '@node_modules/next-auth/react';
 import React from 'react'
 import { useState } from 'react';
@@ -66,11 +67,11 @@ const Profile = ({ user }) => {
                 </div>
                 <div className='bg-primary-2 rounded-lg text-neutral-600 px-4 py-2 mt-6 flex gap-2 items-center'>
                     <i class="ri-user-3-line"></i>
-                    <span className=' '>Profile</span>
+                    <span className=' '><JustText text={"profile"} /></span>
                 </div>
                 <div className='rounded-lg text-neutral-600 px-4 py-2 mt-3 flex gap-2 items-center'>
                     <i class="ri-tools-line"></i>
-                    <span className=' '>Settings</span>
+                    <span className=' '><JustText text={"settings"} /></span>
                 </div>
 
 
@@ -82,17 +83,17 @@ const Profile = ({ user }) => {
                         <span>{user?.phone}</span>
                     </div>
                     <div className='flex gap-2'>
-                        <button type="button" className='w-24 h-10 rounded border border-neutral-500 '>Cancle</button>
+                        <button type="button" className='w-24 h-10 rounded border border-neutral-500 '><JustText text={"cancel"} /></button>
                         <button type="submit" className='w-24 h-10 rounded border border-primary-1 bg-[#24420E] text-white '>
-                            <CircleTextToggle postloader={postloader} text={"Save"} color={"default"} size={"sm"} />
+                            <CircleTextToggle postloader={postloader} text={<JustText text={"save"} />} color={"default"} size={"sm"} />
                         </button>
                     </div>
                 </div>
                 <div className='w-full flex flex-col items-center lg:px-32 mt-20'>
                     <div className='w-full text-sm'>
                         <div class="font-medium  dark:text-white">
-                            <div>Profile picture</div>
-                            <div class="text-xs font-light text-gray-500 dark:text-gray-400">This is how others will recognize you</div>
+                            <div><JustText text={"profile_picture"} /></div>
+                            <div class="text-xs font-light text-gray-500 dark:text-gray-400"><JustText text={"recognition_hint"} /></div>
                         </div>
                         <div className='w-full h-40 flex justify-center items-center'>
                             <div class="relative">
@@ -102,8 +103,8 @@ const Profile = ({ user }) => {
                             </div>
                         </div>
                         <div class="font-medium dark:text-white mt-16">
-                            <div>Personel Data</div>
-                            <div class="text-xs font-light text-gray-500 dark:text-gray-400">Others diserve to know you more</div>
+                            <div><JustText text={"personal_data"} /></div>
+                            <div class="text-xs font-light text-gray-500 dark:text-gray-400"><JustText text={"personal_data_hint"} /></div>
                         </div>
                         <div className='mt-8'>
                             <div className='w-full flex gap-2'>
@@ -152,8 +153,8 @@ const Profile = ({ user }) => {
 
                         </div>
                         <div class="font-medium  dark:text-white mt-16">
-                            <div>Social Profiles</div>
-                            <div class="text-xs font-light text-gray-500 dark:text-gray-400">This can help others finding you on social media</div>
+                            <div><JustText text={"social_profiles"} /></div>
+                            <div class="text-xs font-light text-gray-500 dark:text-gray-400"><JustText text={"social_profiles_hint"} /></div>
                         </div>
                         <div className='mt-8'>
                             <div className='w-full flex gap-2'>

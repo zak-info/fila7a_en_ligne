@@ -1,5 +1,6 @@
 import React from 'react'
 import ConsultingsCard from './ConsultingsCard'
+import JustText from '@components/just-text/JustText'
 
 const Consultings = ({consultings}) => {
   const comps = [
@@ -10,7 +11,7 @@ const Consultings = ({consultings}) => {
   ]
   return (
     <div className='w-full '>
-      <h1 className=' font-bold text-xl'>Consultings Page</h1>
+      <h1 className=' font-bold text-xl'><JustText text={"consulting_page"} /></h1>
       <div className='w-full mt-16 flex flex-col gap-4'>
         {
           consultings?.map((consulting, index) => (

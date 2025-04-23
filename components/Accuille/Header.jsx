@@ -8,6 +8,7 @@ import { GlobalContext } from '@context/GlobalContext'
 // import { Dropdown } from "flowbite-react";
 import { Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, Button } from "@nextui-org/react";
 import Link from "next/link";
+import JustText from "@components/just-text/JustText"
 
 
 
@@ -27,20 +28,20 @@ const Header = () => {
     }
 
     return (
-        <div dir="ltr" className="absolute top-0 w-screen h-24 py-4 bg-gradient-to-b from-white via-white  to-white/5  z-10 flex justify-between items-center text-black">
+        <div  className="absolute top-0 w-screen h-24 py-4 bg-gradient-to-b from-white via-white  to-white/5  z-10 flex justify-between items-center text-black">
             <a href="/" className=" md:ms-4 flex justify-center items-center">
                 <Image width={80} height={80} src={"/logo.png"} className="w-32 h-16" />
             </a>
             <ul className="hidden md:flex  ms-[90px] gap-[55px]  justify-between md:justify-evenly items-center text-gray-600 text-xs md:text-base">
-                <li className=" text-primary-1-hover hover:scale-125  transition ease-in-out duration-250"><a href="#home">Home</a></li>
-                <li className="text-primary-1-hover hover:scale-125  transition ease-in-out duration-250"><a href="#wise">About</a></li>
-                <li className="text-primary-1-hover hover:scale-125  transition ease-in-out duration-250"><a href="#services">Services</a></li>
-                <li className="text-primary-1-hover hover:scale-125  transition ease-in-out duration-250"><a href="#comments">Contact Us</a></li>
-                <li className="text-primary-1-hover hover:scale-125  transition ease-in-out duration-250"><a href="#comments">Pricing</a></li>
+                <li className=" text-primary-1-hover hover:scale-125  transition ease-in-out duration-250"><a href="#home"><JustText text={"home"} /></a></li>
+                <li className="text-primary-1-hover hover:scale-125  transition ease-in-out duration-250"><a href="#wise"><JustText text={"about"} /></a></li>
+                <li className="text-primary-1-hover hover:scale-125  transition ease-in-out duration-250"><a href="#services"><JustText text={"services"} /></a></li>
+                <li className="text-primary-1-hover hover:scale-125  transition ease-in-out duration-250"><a href="#comments"><JustText text={"contact_us"} /> </a></li>
+                <li className="text-primary-1-hover hover:scale-125  transition ease-in-out duration-250"><a href="#comments"><JustText text={"pricing"} /></a></li>
             </ul>
             <div className="w-2/12 md:w-1/3 flex items-center gap-4 justify-end ms-2 me-2 md:me-8">
-                <a href="/login">Login</a>
-                <a href="/login" className="bg-primary-1 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#DBCDAD] focus:ring-opacity-50 text-white md:text-md font-light px-4 py-1 md:px-4 md:py-1 rounded-3xl transition duration-300 ease-in-out">Get Started</a>
+                <a href="/login"><JustText text={"login"} /></a>
+                <a href="/login" className="bg-primary-1 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#DBCDAD] focus:ring-opacity-50 text-white md:text-md font-light px-4 py-1 md:px-4 md:py-1 rounded-3xl transition duration-300 ease-in-out"><JustText text={"get_started"} /></a>
             </div>
         </div>
     )

@@ -1,6 +1,7 @@
 import React from 'react'
 import ProductsCard from './ProductsCard'
 import AddProduct from './AddProduct'
+import JustText from '@components/just-text/JustText'
 
 const Products = ({products,idCompany}) => {
 
@@ -13,7 +14,7 @@ const Products = ({products,idCompany}) => {
 
     return (
         <div className='w-full '>
-            <h1 className=' font-bold text-xl'>Products Page</h1>
+            <h1 className=' font-bold text-xl'><JustText text={"products_page"} /></h1>
             <AddProduct idCompany={idCompany} />
 
             <div className='w-full mt-16 flex justify-start flex-wrap gap-4'>

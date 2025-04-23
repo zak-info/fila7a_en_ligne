@@ -1,5 +1,6 @@
 "use client"
 
+import JustText from '@components/just-text/JustText'
 import { Table, TableBody, TableCell, TableColumn, TableHeader, TableRow } from '@node_modules/@nextui-org/table/dist'
 import React from 'react'
 
@@ -44,7 +45,7 @@ const PublicProfile = ({ _id, user, products, consultings }) => {
                         </li>
                     </ol>
                 </nav>
-                <h2 class="mb-4 text-xl font-semibold text-gray-900 dark:text-white sm:text-2xl md:mb-6">General overview</h2>
+                <h2 class="mb-4 text-xl font-semibold text-gray-900 dark:text-white sm:text-2xl md:mb-6"><JustText text={"general_overview"} /></h2>
                 {
                     user?.type != "user" ?
                         <div class="grid grid-cols-2 gap-6 border-b border-t border-gray-200 py-4 dark:border-gray-700 md:py-8 lg:grid-cols-4 xl:gap-16">
@@ -52,7 +53,7 @@ const PublicProfile = ({ _id, user, products, consultings }) => {
                                 <svg class="mb-2 h-8 w-8 text-gray-400 dark:text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312" />
                                 </svg>
-                                <h3 class="mb-2 text-gray-500 dark:text-gray-400">Products enum</h3>
+                                <h3 class="mb-2 text-gray-500 dark:text-gray-400"><JustText text={"products_enum"} /></h3>
                                 <span class="flex items-center text-2xl font-bold text-gray-900 dark:text-white"
                                 >{products ? products?.length : "0"}
                                     <span class="ms-2 inline-flex items-center rounded bg-green-100 px-2.5 py-0.5 text-xs font-medium text-green-800 dark:bg-green-900 dark:text-green-300">
@@ -73,7 +74,7 @@ const PublicProfile = ({ _id, user, products, consultings }) => {
                                 <svg class="mb-2 h-8 w-8 text-gray-400 dark:text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                                     <path stroke="currentColor" stroke-width="2" d="M11.083 5.104c.35-.8 1.485-.8 1.834 0l1.752 4.022a1 1 0 0 0 .84.597l4.463.342c.9.069 1.255 1.2.556 1.771l-3.33 2.723a1 1 0 0 0-.337 1.016l1.03 4.119c.214.858-.71 1.552-1.474 1.106l-3.913-2.281a1 1 0 0 0-1.008 0L7.583 20.8c-.764.446-1.688-.248-1.474-1.106l1.03-4.119A1 1 0 0 0 6.8 14.56l-3.33-2.723c-.698-.571-.342-1.702.557-1.771l4.462-.342a1 1 0 0 0 .84-.597l1.753-4.022Z" />
                                 </svg>
-                                <h3 class="mb-2 text-gray-500 dark:text-gray-400">Reviews added</h3>
+                                <h3 class="mb-2 text-gray-500 dark:text-gray-400"><JustText text={"reviews_added"} /></h3>
                                 <span class="flex items-center text-2xl font-bold text-gray-900 dark:text-white"
                                 >0
                                     <span class="ms-2 inline-flex items-center rounded bg-green-100 px-2.5 py-0.5 text-xs font-medium text-green-800 dark:bg-green-900 dark:text-green-300">
@@ -94,7 +95,7 @@ const PublicProfile = ({ _id, user, products, consultings }) => {
                                 <svg class="mb-2 h-8 w-8 text-gray-400 dark:text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12.01 6.001C6.5 1 1 8 5.782 13.001L12.011 20l6.23-7C23 8 17.5 1 12.01 6.002Z" />
                                 </svg>
-                                <h3 class="mb-2 text-gray-500 dark:text-gray-400">Favorite products added</h3>
+                                <h3 class="mb-2 text-gray-500 dark:text-gray-400"><JustText text={"favorite_products_added"} /></h3>
                                 <span class="flex items-center text-2xl font-bold text-gray-900 dark:text-white"
                                 >0
                                     <span class="ms-2 inline-flex items-center rounded bg-red-100 px-2.5 py-0.5 text-xs font-medium text-red-800 dark:bg-red-900 dark:text-red-300">
@@ -115,7 +116,7 @@ const PublicProfile = ({ _id, user, products, consultings }) => {
                                 <svg class="mb-2 h-8 w-8 text-gray-400 dark:text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9h13a5 5 0 0 1 0 10H7M3 9l4-4M3 9l4 4" />
                                 </svg>
-                                <h3 class="mb-2 text-gray-500 dark:text-gray-400">Your Orders here</h3>
+                                <h3 class="mb-2 text-gray-500 dark:text-gray-400"><JustText text={"your_orders_here"} /></h3>
                                 <span class="flex items-center text-2xl font-bold text-gray-900 dark:text-white"
                                 >0
                                     <span class="ms-2 inline-flex items-center rounded bg-green-100 px-2.5 py-0.5 text-xs font-medium text-green-800 dark:bg-green-900 dark:text-green-300">
@@ -142,16 +143,16 @@ const PublicProfile = ({ _id, user, products, consultings }) => {
                             <div class="flex space-x-4">
                                 <img class="h-16 w-16 rounded-lg" src="/images/bg-6.png" alt="Helene avatar" />
                                 <div>
-                                    <span class="mb-2 inline-block rounded bg-primary-100 px-2.5 py-0.5 text-xs font-medium text-primary-800 dark:bg-primary-900 dark:text-primary-300"> PRO Account </span>
+                                    <span class="mb-2 inline-block rounded bg-primary-100 px-2.5 py-0.5 text-xs font-medium text-primary-800 dark:bg-primary-900 dark:text-primary-300"><JustText text={"email"} /> PRO Account </span>
                                     <h2 class="flex items-center text-xl font-bold leading-none text-gray-900 dark:text-white sm:text-2xl">{user?.fullname}</h2>
                                 </div>
                             </div>
                             <dl class="">
-                                <dt class="font-semibold text-gray-900 dark:text-white">Email Address</dt>
+                                <dt class="font-semibold text-gray-900 dark:text-white"><JustText text={"email"} /></dt>
                                 <dd class="text-gray-500 dark:text-gray-400">{user?.email}</dd>
                             </dl>
                             <dl>
-                                <dt class="font-semibold text-gray-900 dark:text-white">Home Address</dt>
+                                <dt class="font-semibold text-gray-900 dark:text-white"><JustText text={"home_address"} /></dt>
                                 <dd class="flex items-center gap-1 text-gray-500 dark:text-gray-400">
                                     <svg class="hidden h-5 w-5 shrink-0 text-gray-400 dark:text-gray-500 lg:inline" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m4 12 8-8 8 8M6 10.5V19a1 1 0 0 0 1 1h3v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h3a1 1 0 0 0 1-1v-8.5" />
@@ -160,7 +161,7 @@ const PublicProfile = ({ _id, user, products, consultings }) => {
                                 </dd>
                             </dl>
                             <dl>
-                                <dt class="font-semibold text-gray-900 dark:text-white">Delivery Address</dt>
+                                <dt class="font-semibold text-gray-900 dark:text-white"><JustText text={"delivery_address"} /></dt>
                                 <dd class="flex items-center gap-1 text-gray-500 dark:text-gray-400">
                                     <svg class="hidden h-5 w-5 shrink-0 text-gray-400 dark:text-gray-500 lg:inline" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h6l2 4m-8-4v8m0-8V6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v9h2m8 0H9m4 0h2m4 0h2v-4m0 0h-5m3.5 5.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0Zm-10 0a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0Z" />
@@ -171,11 +172,11 @@ const PublicProfile = ({ _id, user, products, consultings }) => {
                         </div>
                         <div class="space-y-4">
                             <dl>
-                                <dt class="font-semibold text-gray-900 dark:text-white">Phone Number</dt>
+                                <dt class="font-semibold text-gray-900 dark:text-white"><JustText text={"phone"} /></dt>
                                 <dd class="text-gray-500 dark:text-gray-400">{user?.phone}</dd>
                             </dl>
                             <dl>
-                                <dt class="font-semibold text-gray-900 dark:text-white">Favorite pick-up point</dt>
+                                <dt class="font-semibold text-gray-900 dark:text-white"><JustText text={"favorite_pickup_point"} /></dt>
                                 <dd class="flex items-center gap-1 text-gray-500 dark:text-gray-400">
                                     <svg class="hidden h-5 w-5 shrink-0 text-gray-400 dark:text-gray-500 lg:inline" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                                         <path
@@ -220,7 +221,7 @@ const PublicProfile = ({ _id, user, products, consultings }) => {
                 {
                     user?.type != "user"  && user?.type != "veterinarian" ?
                         <div class="rounded-lg border border-gray-200 bg-gray-50 p-4 dark:border-gray-700 dark:bg-gray-800 md:p-8">
-                            <h3 class="mb-4 text-xl font-semibold text-gray-900 dark:text-white">Latest Products</h3>
+                            <h3 class="mb-4 text-xl font-semibold text-gray-900 dark:text-white"><JustText text={"latest_products"} /></h3>
                             {/* <div class="flex flex-wrap items-center gap-y-4 border-b border-gray-200 pb-4 dark:border-gray-700 md:pb-5">
                         <dl class="w-1/2 sm:w-48">
                             <dt class="text-base font-medium text-gray-500 dark:text-gray-400">Product ID:</dt>

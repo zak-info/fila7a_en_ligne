@@ -1,3 +1,4 @@
+import JustText from '@components/just-text/JustText';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -90,7 +91,7 @@ function BarChart() {
   return (
     <div>
       <h1 className="font-bold text-3xl text-center mt-10">
-        Kinds of products
+      <JustText text={"kinds_of_products"} />
       </h1>
       <div className="w-full h-full cursor-pointer">
         <Bar data={data} options={options} />

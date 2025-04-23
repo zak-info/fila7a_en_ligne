@@ -1,15 +1,16 @@
+import JustText from '@components/just-text/JustText'
 import Image from '@node_modules/next/image'
 import React from 'react'
 
-const Section3 = () => {
+const Section3 = ({}) => {
     return (
         <div className="relative w-full flex justify-evenly  p-20">
             <div className="lg:w-2/5">
-                <span className="text-[#24420E] text-lg font-semibold">Why Choose Filaha Online?</span>
-                <h1 className="text-4xl font-semibold  mt-4 ">Our Crops Are Nurtured With Deep Love For Nature</h1>
-                <p className=" font-light mt-8">Filaha Online is transforming agriculture by combining innovation, sustainability, and quality. We focus on making healthy foods by ensuring fresh, organic, and nutrient-rich products that promote well-being. Through advanced technology, we enhance farming efficiency, increase yields, and adopt eco-friendly practices. Our commitment to reforming agricultural systems drives us to integrate smart solutions, optimize resources, and create a more sustainable and productive future. With Filaha Online, you choose a smarter, healthier, and more sustainable way of farming and food production.</p>
+                <span className="text-[#24420E] text-lg font-semibold"><JustText text={"why_choose"} /></span>
+                <h1 className="text-4xl font-semibold  mt-4 "><JustText text={"crops_nurtured"} /></h1>
+                <p className=" font-light mt-8"><JustText text={"why_paragraph"} /></p>
                 <a href="/login" className="flex text-white justify-between px-6 p-4 mt-12 rounded-full w-60 bg-primary-1   text-sm items-center font-light g">
-                    More Why Choos Us
+                <JustText text={"more_why_choose"} />
                     <svg width="25" height="25" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="22" cy="22" r="22" fill="white" />
                         <g clip-path="url(#clip0_0_1)">

@@ -1,5 +1,6 @@
 'use client'
 
+import JustText from "@components/just-text/JustText"
 import { Accordion, AccordionItem } from "@node_modules/@nextui-org/accordion/dist"
 import Image from "@node_modules/next/image"
 
@@ -54,9 +55,9 @@ const Section6 = () => {
         <Image src={"/images/bg-8.png"} width={500} height={1000} className="w-[40vw] h-[80vh]" />
       </div>
       <div className="w-full lg:w-2/5">
-        <span className="text-[#24420E] text-lg font-semibold">Freaquently Asked Questions</span>
-        <h1 className="text-4xl font-semibold  mt-4 ">Most Frequently Asked Questions About Filaha Online</h1>
-        <p className=" font-light mt-8">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusant </p>
+        <span className="text-[#24420E] text-lg font-semibold"><JustText text={"read_more"} /></span>
+        <h1 className="text-4xl font-semibold  mt-4 "><JustText text={"read_more"} /></h1>
+        <p className=" font-light mt-8"><JustText text={"read_more"} /></p>
         <div className="w-full flex justify-between gap-2 mt-8">
           {/* <Accordion variant="splitted" className="w-full ">
                 <AccordionItem key="1" aria-label="Accordion 1" className="bg-[#24420E] flex justify-between text-sm text-white rounded-xl " title="How can I track crop growth using modern technologies?">

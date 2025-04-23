@@ -1,3 +1,4 @@
+import JustText from '@components/just-text/JustText';
 import {
   Chart as ChartJS,
   ArcElement,
@@ -66,7 +67,7 @@ function PieChart() {
   return (
     <div>
       <h1 className="font-bold text-3xl text-center mt-10">
-        Pie Chart using ChartJS
+        <JustText text={"kinds_of_products"} />
       </h1>
       <div className="w-full h-full p-8 cursor-pointer">
         {/* { */}
